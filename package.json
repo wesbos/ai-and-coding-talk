@@ -13,8 +13,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@code-hike/lighter": "^0.6.6",
     "date-fns": "^2.29.3",
     "postcss-nesting": "^11.2.2",
+    "shiki": "^0.14.2",
+    "theme-cobalt2": "^2.4.2",
     "three": "^0.151.3",
     "three.js": "^0.77.1",
     "vanta": "^0.5.24",

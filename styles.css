@@ -47,7 +47,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   font-family: "Ika VAR";
-  overflow: hidden;
 }
 
 body.firefox {
@@ -192,8 +191,70 @@ article:has(h2 + img):not(:has(:nth-child(3))) {
   gap: 50px;
 }
 
+p.prompt {
+  font-family: "Operator Mono", monospace;
+  /* text-align: left; */
+  text-wrap: balance;
+}
+
 .columns {
-  display: flex;
+  display: grid;
   align-items: center;
+  grid-template-columns: minmax(20%, 30%) 1fr;
+  align-content: center;
   gap: 100px;
+  height: 100%;
+  & > pre.code-block,
+  & > *:has(pre.code-block) {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100%;
+  }
+}
+
+.sandwich {
+  display: grid;
+  grid-template-rows: auto auto;
+  background: red;
+  height: 100%;
+  width: 100%;
+  * > pre.code-block {
+    width: 100%;
+    overflow-y: scroll;
+    height: 100%;
+    overflow-x: hidden;
+  }
+}
+
+/* Code highlighting */
+pre.code-block {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Operator Mono", monospace;
+  text-align-last: left;
+  padding: 20px;
+  overflow: scroll;
+  min-width: 50%;
+  font-size: 35px;
+  line-height: 1.3;
+  margin: 0;
+  border: 0;
+  scrollbar-color: #ffc600 transparent;
+  text-wrap: wrap;
+  & span {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+  }
+  & span.hide {
+    opacity: 0.1;
+  }
+  &::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+  }
 }

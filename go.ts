@@ -4,6 +4,7 @@ import FOG from "vanta/src/vanta.fog";
 import TRUNK from "./vanta/trunk";
 // const x = new SessionsWave();
 // x.connect();
+import './code-highlight';
 
 // import svg from './icons/bun.svg?raw'
 
@@ -89,7 +90,7 @@ function wait(ms) {
 }
 
 async function paint(canvas) {
-  console.log('painting');
+  // console.log('painting');
   const image = canvas.toDataURL();
   document.documentElement.style.setProperty(
     "--image",
@@ -100,7 +101,7 @@ async function paint(canvas) {
 
 
 async function paintBlob(canvas) {
-  console.log('painting');
+  // console.log('painting');
   // const image = canvas.toDataURL();
   canvas.toBlob(async (blob) => {
     // console.count(blob);
@@ -114,5 +115,5 @@ async function paintBlob(canvas) {
 
 }
 
-go();
+// go();
 
