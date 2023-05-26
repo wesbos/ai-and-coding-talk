@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "vite . --port 6969",
-    "build": "vite build --out-dir docs --base=/next-gen-server-js/"
+    "build": "vite build --out-dir docs --base=/ai-and-coding-talk/"
   },
   "author": "",
   "license": "ISC",

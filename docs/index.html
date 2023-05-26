@@ -9,23 +9,23 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.151.3/three.min.js"></script> -->
     <script src="./p5.min.js"></script>
     
-    <script type="module" crossorigin src="/next-gen-server-js/assets/index.585261e6.js"></script>
-    <link rel="stylesheet" href="/next-gen-server-js/assets/index.cd2165b1.css">
+    <script type="module" crossorigin src="/ai-and-coding-talk/assets/index.6deaf8ca.js"></script>
+    <link rel="stylesheet" href="/ai-and-coding-talk/assets/index.4110b082.css">
   </head>
 
   <body>
     <section class="slides layout-regular template-default">
       <article>
         <div id="trunk"></div>
-        <h1>Next-Gen<br />Serverside<br />JavaScript!</h1>
+        <h1>✨ AI<br />+ Coding!</h1>
       </article>
 
       <article>
         <h1>
           <mark>Hi, I&apos;m<br />Wes Bos</mark>
         </h1>
-        <p class="sub">Hamilton, On 🇨🇦</p>
-        <p class="sub">@wesbos.com on bluesky</p>
+        <p class="sub">Hamilton, On 🇨🇦. 100% Dutch 🇳🇱</p>
+        <p class="sub">@wesbos</p>
       </article>
       <article class="first">
         <div class="columns">
@@ -43,14 +43,960 @@
       </article>
 
       <article>
-        <h1>What is this talk about?</h1>
-        <p class="sub">Server Side JavaScript</p>
+        <h1>This is a talk about Coding with and for AI</h1>
       </article>
 
       <article>
-        <h1>JavaScript Runtimes</h1>
-        <p>Engines + APIS === Runtime</p>
+        <h2>Lets clear a few things up</h2>
+        <ul class="build">
+          <li>I have nothing to sell</li>
+          <li>I'm not some huckster</li>
+          <li>Just a enthusiastic user!</li>
+          <li>Skeptical? Good, me too. Don't tell me about it, show me!</li>
+        </ul>
       </article>
+
+      <article>
+        <img src="/ai-and-coding-talk/assets/meh.0bd01570.png" alt="" class="fit" />
+      </article>
+      <article>
+        <h1>
+          AI gives developers a massive boost in productivity and code quality.
+        </h1>
+      </article>
+      <article>
+        <h1>
+          We're still figuring a lot of things out - but I don't think it's
+          going anywhere and it's not something to ignore.
+        </h1>
+      </article>
+
+      <article>
+        <h1>Mediums</h1>
+      </article>
+
+      <article>
+        <h3>Ghost Code</h3>
+
+        <div class="grid">
+          copilot, amazon code whisperer, replit ghostwriter, tabnine, codegeex,
+        </div>
+      </article>
+      <article>
+        <h3>CLI</h3>
+        <img src="https://fig.io/images/support/banner/fig-ai.gif" alt="" />
+        <div class="grid">Copilot CLI, WARP, Fig</div>
+      </article>
+
+      <article>
+        <h3>Chat</h3>
+        <p>Copilot Chat, Warp, RAycast, ChatGPT...</p>
+      </article>
+      <article>
+        <h3>Pull Requests</h3>
+        <video src="/ai-and-coding-talk/assets/prs.5a522bc4.mp4" muted autoplay loop></video>
+      </article>
+
+      <article>
+        <h3>So many Experiments</h3>
+        <p>Voice, Brushes, 100% prompt driven</p>
+      </article>
+
+      <article>
+        <h1>Why?</h1>
+        <ul class="build">
+          <li>It's faster than google</li>
+          <li>It's context aware</li>
+          <li>It solves your problem, not someone elses problem</li>
+        </ul>
+      </article>
+
+      <article>
+        <h2>Examples</h2>
+      </article>
+
+      <article>
+        <h3>Dummy Data</h3>
+      </article>
+
+      <article>
+        <div class="columns">
+          <p class="prompt">
+            give me an array of people, each person has a first, last, and age
+            property. <br />Each person also has a nested array of 1-3 jobs,
+            which have start date, optional end date, description and a manager,
+            who has the same properties as a person.
+          </p>
+
+          <script type="text/display">
+            type Person = {
+              first: string;
+              last: string;
+              age: number;
+              jobs: Job[];
+            };
+
+            type Job = {
+              startDate: Date;
+              endDate?: Date;
+              description: string;
+              manager: Person;
+            };
+
+            const people: Person[] = [
+              {
+                first: 'John',
+                last: 'Doe',
+                age: 30,
+                jobs: [
+                  {
+                    startDate: new Date('2020-01-01'),
+                    endDate: new Date('2021-01-01'),
+                    description: 'Software Engineer',
+                    manager: {
+                      first: 'Jane',
+                      last: 'Doe',
+                      age: 40,
+                      jobs: [],
+                    },
+                  },
+                  {
+                    startDate: new Date('2018-01-01'),
+                    description: 'Web Developer',
+                    manager: {
+                      first: 'Bob',
+                      last: 'Smith',
+                      age: 50,
+                      jobs: [],
+                    },
+                  },
+                ],
+              },
+              {
+                first: 'Jane',
+                last: 'Doe',
+                age: 40,
+                jobs: [
+                  {
+                    startDate: new Date('2015-01-01'),
+                    endDate: new Date('2019-01-01'),
+                    description: 'Manager',
+                    manager: {
+                      first: 'Bob',
+                      last: 'Smith',
+                      age: 50,
+                      jobs: [],
+                    },
+                  },
+                ],
+              },
+            ];
+          </script>
+        </div>
+      </article>
+
+      <article>
+        <div class="sandwich">
+          <div>
+            <script type="text/display">
+              // Add types
+              async function addItemToOrder(orderId, item, quantity) {
+                console.log(`Adding ${quantity} ${item.name} (${item.sku}) to order ${orderId}`)
+                const await order = getOrderDetails(orderId);
+                order.items.push({ item, quantity });
+                await saveOrder(order);
+                return order;
+              }
+            </script>
+          </div>
+          <script type="text/display">
+            type Item = { name: string; sku: string; };
+            type OrderItem = { item: Item; quantity: number; };
+            type Order = { id: string; items: OrderItem[]; };
+
+            async function addItemToOrder(orderId: string, item: Item, quantity: number): Promise<Order> {
+              console.log(`Adding ${quantity} ${item.name} (${item.sku}) to order ${orderId}`)
+              const order: Order = await getOrderDetails(orderId);
+              order.items.push({ item, quantity });
+              await saveOrder(order);
+              return order;
+            }
+          </script>
+        </div>
+      </article>
+
+      <article>
+        <div class="sanwich">
+          <div>
+            <h3>Do the work</h3>
+            <script type="text/display">
+              const video = document.querySelector('video');
+              const canvas = document.querySelector('canvas');
+              const ctx = canvas.getContext('2d');
+              // Write a function to paint the video frame to canvas as frequently as possible. Give me the entire output.
+            </script>
+          </div>
+          <div>
+            <script type="text/display">
+              const video: HTMLVideoElement = document.querySelector('video');
+              const canvas: HTMLCanvasElement = document.querySelector('canvas');
+              const ctx: CanvasRenderingContext2D = canvas.getContext('2d');
+
+              function paintVideoFrame(): void {
+                ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                requestAnimationFrame(paintVideoFrame);
+              }
+
+              paintVideoFrame();
+            </script>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <div class="columns">
+          <p class="prompt">
+            convert to a class based re-usable library with all best practices.
+            I want to be able to pass in either selector strings or elements
+          </p>
+          <script type="text/display">
+            type Selector = string | HTMLElement;
+
+            class VideoCanvasPainter {
+              private readonly video: HTMLVideoElement;
+              private readonly canvas: HTMLCanvasElement;
+              private readonly ctx: CanvasRenderingContext2D;
+
+              constructor(videoSelector: Selector, canvasSelector: Selector) {
+                this.video = this.getElement(videoSelector);
+                this.canvas = this.getElement(canvasSelector);
+                this.ctx = this.canvas.getContext('2d');
+              }
+
+              public start(): void {
+                this.paintVideoFrame();
+              }
+
+              private paintVideoFrame(): void {
+                this.ctx.drawImage(this.video, 0, 0, this.canvas.width, this.canvas.height);
+                requestAnimationFrame(() => this.paintVideoFrame());
+              }
+
+              private getElement(selector: Selector): HTMLElement {
+                if (typeof selector === 'string') {
+                  return document.querySelector(selector);
+                } else {
+                  return selector;
+                }
+              }
+            }
+          </script>
+        </div>
+      </article>
+
+      <article>
+        <div class="columns">
+          <div>
+            <p class="prompt">
+              I have this HTML.Write the selectors with nth-child so that each
+              of the 10 items have random rotate values between - 2 and 2. Use 2
+              decimal points and turns.
+            </p>
+            <script lang="html" type="text/display">
+              <div class="cards">
+                <div class="card"></div>
+                // 10 + items
+              </div>
+            </script>
+          </div>
+          <div>
+            <script lang="css" type="text/display">
+              .card:nth-child(1) {
+                transform: rotate(-1.23turn);
+              }
+
+              .card:nth-child(2) {
+                transform: rotate(0.45turn);
+              }
+
+              .card:nth-child(3) {
+                transform: rotate(1.67turn);
+              }
+
+              .card:nth-child(4) {
+                transform: rotate(-0.89turn);
+              }
+
+              .card:nth-child(5) {
+                transform: rotate(0turn);
+              }
+
+              .card:nth-child(6) {
+                transform: rotate(1.23turn);
+              }
+
+              .card:nth-child(7) {
+                transform: rotate(-1.67turn);
+              }
+
+              .card:nth-child(8) {
+                transform: rotate(0.89turn);
+              }
+
+              .card:nth-child(9) {
+                transform: rotate(-0.45turn);
+              }
+
+              .card:nth-child(10) {
+                transform: rotate(0.56turn);
+              }
+            </script>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h2>Using AI to Code</h2>
+        <h2 class="ghost">Coding for AI</h2>
+      </article>
+
+      <article>
+        <h2>Using AI to Code</h2>
+        <h2 class="ghost">Coding for AI</h2>
+      </article>
+
+      <article>
+        <script type="text/display">
+          const body = document.querySelector("body");
+          const color1 = getComputedStyle(document.documentElement).getPropertyValue(
+            "--fogColor1"
+          );
+          const color3 = getComputedStyle(document.documentElement).getPropertyValue(
+            "--fogColor3"
+          );
+          const color5 = getComputedStyle(document.documentElement).getPropertyValue(
+            "--fogColor5"
+          );
+
+          const computedStyle = getComputedStyle(document.documentElement);
+          const cssVariables = Object.fromEntries(
+            Object.values(computedStyle)
+              .filter((key) => key.startsWith(`--`))
+              .map((key) => {
+                return [key.replace(`--`, ''), computedStyle.getPropertyValue(key)];
+              })
+          );
+
+          function hexToNumber(hex = '#ffc600') {
+            return `0x${parseInt(hex.replace("#", ""), 16).toString(16)}`;
+          }
+        </script>
+      </article>
+      <article>
+        <img src="/ai-and-coding-talk/assets/regex.bc294511.png" alt="" class="fit" />
+      </article>
+      <article>
+        <img src="/ai-and-coding-talk/assets/regex-explained.f41950e4.png" alt="" class="fit" />
+      </article>
+
+      <article>
+        <script type="text/display">
+          const regex = /\b(?:ORD-)?\d{6}(?:\d{2})?\b/g;
+
+          test('matches ORD-123456', () => {
+            const input = 'The order number is ORD-123456.';
+            const matches = input.match(regex);
+            expect(matches).toEqual(['ORD-123456']);
+          });
+
+          test('matches ORD-12345678', () => {
+            const input = 'The order number is ORD-12345678.';
+            const matches = input.match(regex);
+            expect(matches).toEqual(['ORD-12345678']);
+          });
+
+          test('matches 123456', () => {
+            const input = 'The order number is 123456.';
+            const matches = input.match(regex);
+            expect(matches).toEqual(['123456']);
+          });
+
+          test('matches 12345678', () => {
+            const input = 'The order number is 12345678.';
+            const matches = input.match(regex);
+            expect(matches).toEqual(['12345678']);
+          });
+
+          test('matches multiple order numbers', () => {
+            const input = 'The order numbers are ORD-123456 and 12345678.';
+            const matches = input.match(regex);
+            expect(matches).toEqual(['ORD-123456', '12345678']);
+          });
+
+          test('does not match invalid order numbers', () => {
+            const input = 'The order number is 12345.';
+            const matches = input.match(regex);
+            expect(matches).toBeNull();
+          });
+        </script>
+      </article>
+
+      <article>
+        <img src="/ai-and-coding-talk/assets/tests-passed.24ed0023.png" alt="" class="fit" />
+      </article>
+
+      <article>
+        <img src="/ai-and-coding-talk/assets/tdd.9141219f.png" alt="" class="fit" />
+      </article>
+      <article>
+        <img src="/ai-and-coding-talk/assets/take1.359c1dcf.png" alt="" class="fit" />
+      </article>
+      <article>
+        <img src="/ai-and-coding-talk/assets/take2.aa1b0fcc.png" alt="" class="fit" />
+      </article>
+      <article>
+        <img src="/ai-and-coding-talk/assets/take3.710026eb.png" alt="" class="fit" />
+      </article>
+      <article>
+        <h1>and then...</h1>
+      </article>
+      <article>
+        <img src="/ai-and-coding-talk/assets/take4.5dc63fa6.png" alt="" class="fit" />
+      </article>
+      <article class="columns">
+        <h3>LOL It's so dumb!</h3>
+        <h4>↑ us ↓</h4>
+        <h3>It will get better</h3>
+      </article>
+
+      <article>
+        <h3>Flow Control</h3>
+        <script type="text/display">
+          getWeather(function (weather) {
+            getPhotosOfCurrentWeather(weather, function (photos) {
+              getBlogPosts(function (posts) {
+                getTwitter(function (tweets) {
+                  console.log(photos, posts, tweets);
+                });
+              });
+            });
+          });
+        </script>
+      </article>
+      <article>
+        <p class="prompt">convert to using promises</p>
+        <script type="text/display">
+          getWeather()
+            .then((weather) => getPhotosOfCurrentWeather(weather))
+            .then((photos) => getPosts(photos))
+            .then((posts) => getTwitter(posts))
+            .then((tweets) => console.log(tweets))
+            .catch((error) => console.error(error));
+        </script>
+      </article>
+      <article>
+        <p class="prompt">convert to async + await</p>
+        <script type="text/display">
+          try {
+            const weather = await getWeather();
+            const photos = await getPhotosOfCurrentWeather(weather);
+            const posts = await getPosts(photos);
+            const tweets = await getTwitter(posts);
+            console.log(tweets);
+          } catch (error) {
+            console.error(error);
+          }
+        </script>
+      </article>
+
+      <article>
+        <p class="prompt">
+          can the selected code be improved for any waterfall issues? Run
+          concurrently if possible.
+        </p>
+        <script type="text/display">
+          Promise.all([getWeather(), getPhotosOfCurrentWeather(), getPosts(), getTwitter()])
+            .then(([weather, photos, posts, tweets]) => {
+              console.log(tweets);
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+        </script>
+      </article>
+
+      <article>
+        <img src="/ai-and-coding-talk/assets/fall-apart.99bbc94f.png" alt="" class="fit" />
+      </article>
+
+      <article>
+        <p class="prompt">
+          # ffmpeg command for merging three video files, overlaying captions
+          and adding music from tunes.mp3
+        </p>
+        <script type="text/display" lang="bash">
+          ffmpeg -i video1.mp4 -i video2.mp4 -i video3.mp4 -i captions.srt -i tunes.mp3 -filter_complex "[0:v][0:a][1:v][1:a][2:v][2:a]concat=n=3:v=1:a=1[vv][a];[vv][3:v]subtitles=captions.srt[vvv];[vvv][4:a]amix=inputs=2[audio]" -map "[vvv]" -map "[audio]" output.mp4
+        </script>
+      </article>
+
+      <article>
+        <img src="/ai-and-coding-talk/assets/explain2.eccd5d20.png" alt="" class="fit" />
+      </article>
+      <article>
+        <img src="/ai-and-coding-talk/assets/install-these.d475f97c.png" alt="" class="fit" />
+      </article>
+
+      <article>
+        <h1>I could show cool examples all day</h1>
+      </article>
+
+      <article>
+        <h1>Let's look at how to integrate AI into your apps</h1>
+      </article>
+
+      <article>
+        <img src="/ai-and-coding-talk/assets/syntaxmp3.bf88f259.png" alt="" />
+      </article>
+      <article>
+        <div class="columns">
+          <div>
+            <img src="/ai-and-coding-talk/assets/syntaxmp3.bf88f259.png" alt="" />
+          </div>
+          <div>
+            <script type="text/display" lang="json">
+              {
+                "start": 3243.8252,
+                "end": 3249.33,
+                "confidence": 0.91799587,
+                "channel": 0,
+                "transcript": "Safari has been cranking lately on all these features. And a lot of them, like, CSS relative color,",
+                "words": [
+                  {
+                    "word": "safari",
+                    "start": 3243.8252,
+                    "end": 3244.3052,
+                    "confidence": 0.6616211,
+                    "speaker": 1,
+                    "speaker_confidence": 0.8265509,
+                    "punctuated_word": "Safari"
+                  },
+                  {
+                    "word": "has",
+                    "start": 3244.3052,
+                    "end": 3244.465,
+                    "confidence": 0.9941406,
+                    "speaker": 1,
+                    "speaker_confidence": 0.8265509,
+                    "punctuated_word": "has"
+                  },
+                  {
+                    "word": "been",
+                    "start": 3244.465,
+                    "end": 3244.7852,
+                    "confidence": 0.9995117,
+                    "speaker": 1,
+                    "speaker_confidence": 0.8265509,
+                    "punctuated_word": "been"
+                  },
+                  {
+                    "word": "cranking",
+                    "start": 3244.7852,
+                    "end": 3245.2852,
+                    "confidence": 0.99902344,
+                    "speaker": 1,
+                    "speaker_confidence": 0.8265509,
+                    "punctuated_word": "cranking"
+                  },
+                  {
+                    "word": "lately",
+                    "start": 3245.3452,
+                    "end": 3245.745,
+                    "confidence": 0.9995117,
+                    "speaker": 1,
+                    "speaker_confidence": 0.8265509,
+                    "punctuated_word": "lately"
+                  },
+                  {
+                    "word": "on",
+                    "start": 3245.745,
+                    "end": 3245.9053,
+                    "confidence": 0.98779297,
+                    "speaker": 1,
+                    "speaker_confidence": 0.8265509,
+                    "punctuated_word": "on"
+                  },
+                  {
+                    "word": "all",
+                    "start": 3245.9053,
+                    "end": 3246.0652,
+                    "confidence": 0.87939453,
+                    "speaker": 1,
+                    "speaker_confidence": 0.8265509,
+                    "punctuated_word": "all"
+                  },
+                  {
+                    "word": "these",
+                    "start": 3246.0652,
+                    "end": 3246.3052,
+                    "confidence": 0.88671875,
+                    "speaker": 1,
+                    "speaker_confidence": 0.8265509,
+                    "punctuated_word": "these"
+                  },
+                  {
+                    "word": "features",
+                    "start": 3246.3052,
+                    "end": 3246.7852,
+                    "confidence": 0.94750977,
+                    "speaker": 1,
+                    "speaker_confidence": 0.8265509,
+                    "punctuated_word": "features."
+                  },
+                  {
+                    "word": "and",
+                    "start": 3246.7852,
+                    "end": 3246.945,
+                    "confidence": 0.75634766,
+                    "speaker": 1,
+                    "speaker_confidence": 0.32861948,
+                    "punctuated_word": "And"
+                  },
+                  {
+                    "word": "a",
+                    "start": 3246.945,
+                    "end": 3247.0251,
+                    "confidence": 0.99072266,
+                    "speaker": 1,
+                    "speaker_confidence": 0.32861948,
+                    "punctuated_word": "a"
+                  },
+                  {
+                    "word": "lot",
+                    "start": 3247.0251,
+                    "end": 3247.2651,
+                    "confidence": 0.9995117,
+                    "speaker": 1,
+                    "speaker_confidence": 0.32861948,
+                    "punctuated_word": "lot"
+                  },
+                  {
+                    "word": "of",
+                    "start": 3247.2651,
+                    "end": 3247.425,
+                    "confidence": 0.99853516,
+                    "speaker": 1,
+                    "speaker_confidence": 0.32861948,
+                    "punctuated_word": "of"
+                  },
+                  {
+                    "word": "them",
+                    "start": 3247.425,
+                    "end": 3247.5852,
+                    "confidence": 0.9213867,
+                    "speaker": 1,
+                    "speaker_confidence": 0.6581424,
+                    "punctuated_word": "them,"
+                  },
+                  {
+                    "word": "like",
+                    "start": 3247.5852,
+                    "end": 3247.87,
+                    "confidence": 0.96728516,
+                    "speaker": 1,
+                    "speaker_confidence": 0.6581424,
+                    "punctuated_word": "like,"
+                  },
+                  {
+                    "word": "css",
+                    "start": 3247.87,
+                    "end": 3248.37,
+                    "confidence": 0.74853516,
+                    "speaker": 1,
+                    "speaker_confidence": 0.6581424,
+                    "punctuated_word": "CSS"
+                  },
+                  {
+                    "word": "relative",
+                    "start": 3248.4302,
+                    "end": 3248.83,
+                    "confidence": 0.8520508,
+                    "speaker": 1,
+                    "speaker_confidence": 0.6581424,
+                    "punctuated_word": "relative"
+                  },
+                  {
+                    "word": "color",
+                    "start": 3248.83,
+                    "end": 3249.33,
+                    "confidence": 0.9343262,
+                    "speaker": 1,
+                    "speaker_confidence": 0.6581424,
+                    "punctuated_word": "color,"
+                  }
+                ],
+                "speaker": 1,
+                "id": "0a2d1bc7-222f-47fb-8000-114ca10e7a27"
+              },
+            </script>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h3>What we want</h3>
+        <script type="text/display" lang="json">
+          {
+            "title": "...",
+            "description": "...",
+            "notes": "...",
+            "summary": [{"time": "02:33", "text": "...", "description": "..."}],
+            "tweets": ["..."],
+            "listener_tweets": ["..."],
+            "topics": ["...", "..."],
+            "links": [{ "name": "Name of link", "url": "https://example.com"}, "..."],
+            "speaker_times": [{"name": "Wes Bos", "time": "02:33"}, "..."],
+            "guests": ["..."]
+          }
+        </script>
+      </article>
+
+      <article>
+        <h3>Prompts</h3>
+        <script type="text/display" lang="markdown">
+          Summarize the provided podcast transcript into very succinct bullet points, each containing just a few words:
+
+          Wes: Hello and welcome to syntax
+
+          Scott: Today we're covering CSS variables and how you can use them!
+
+          Wes: Siiiiiiick!
+        </script>
+      </article>
+
+      <article>
+        <img src="/ai-and-coding-talk/assets/tokens.6c9c1027.png" alt="" class="fit" />
+      </article>
+
+      <article>
+        1 hour podcast = 15,000 token input, 1,000 token output
+
+        <table>
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Token Limit</th>
+              <th>Cost to summarize Podcast</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GPT 3.5 turbo</td>
+              <td>4,096</td>
+              <td>3 cents</td>
+            </tr>
+            <tr>
+              <td>GPT 4 turbo</td>
+              <td>8,192</td>
+              <td>51 cents</td>
+            </tr>
+            <tr>
+              <td>GPT 4-32k turbo</td>
+              <td>32,768</td>
+              <td>$1.02</td>
+            </tr>
+            <tr>
+              <td>Antropic Claude v1</td>
+              <td>100,000</td>
+              <td>48 cents</td>
+            </tr>
+            <tr>
+              <td>Antropic Claude v1 Instant</td>
+              <td>100,000</td>
+              <td>8 cents</td>
+            </tr>
+          </tbody>
+        </table>
+        <!--
+        <h3>Token Limits by Model</h3>
+        <p>GPT 3.5 turbo, 4,096, 3 cents</p>
+        <p>GPT 4 turbo: 8,192, 51 cents</p>
+        <p>GPT 4-32k turbo: 32,768, $1.02</p>
+        <p>Antropic Claude v1: 100,000 - $.03 / 1k, 48 cents</p>
+        <p>Antropic Claude v1 Instant: 100,000 - $0.005 / 1k, 8 cents</p> -->
+      </article>
+
+      <article>
+        <script type="text/display">
+          export const createCondensePrompt = (size: string = '50%') =>  `You will condense this text to about ${size} shorter - give or take 15%. You keep every detail, even if you think it does not matter. You keep the tone and style of speaking as well:`;
+        </script>
+        <script type="text/display" lang="json">
+          {
+            // input: 96 tokens
+            "transcript": "Welcome everybody. How's everybody doing? Hopefully, you're ready for another syntax today, we're gonna be talking about JavaScript Utility libraries, which it's it's truly a tasty treats episode because we're just gonna rattle through, I don't know, a couple of half or a dozen or 2 different utility libraries, things that we use that make your life a little bit easier, things that make you go.That's handy.So how you how you doing, Scott?",
+
+            // Output: 60 out
+            "condensedTranscript": "Hey everyone! How are you all? Hope you're prepared for today's topic: JavaScript Utility libraries! It's a treat-filled episode as we'll quickly go through, maybe one or two dozen utility libraries - things we use to make life easier and enjoyable. So, Scott, how are you?"
+          },
+        </script>
+      </article>
+
+      <article>
+        <script type="text/display">
+          export const summarizePrompt = `Summarize the provided podcast transcript into very succinct bullet points, each containing just a few words. The bullet points should correspond to sections or topics discussed in the podcast with points at least every 3-5 minutes. For each bullet point, you may also provide a longer 1-2 sentence summary of the topic if necessary, which may also include the hosts opinions, thoughts. Do not skip topics.
+
+          Remember, the key here is to read through the transcript carefully, identify all points, topics, questions and even banter, and then condense each one into a very brief, clear statement. It's also important to include timestamps if they're provided in the transcript, as they can help give a sense of the flow and structure of the podcast.
+
+          Additionally, Please create the following for this podcast episode:
+
+          1. 1-2 sentence description about what is covered in the podcast. This should be a short, catchy, and interesting description. It should provoke the listener to stop what they are doing and listen to the podcast.
+          2. 6-7 tweets for this podcast episode. These tweets should be short, catchy, and interesting. They should provoke the twitter user to respond an join in the conversation. Do not use hashtags or emojis. Use Exclaimation points sparingly.
+          3. 6-7 tweets about this podcast that can be tweeted by listeners of the show. Some examples are "This is a fantastic episode about ___", or "I really enjoyed the part about ____". They should mention @syntaxfm
+          4. 3-4 hashtags that categorize the episode. these will be used as topic tags on the website.
+          5. A summary of the podcast into a title. It should be catchy, slightly click-baity, mention a few topics covered and make the listener want to stop what they are doing and watch it.
+          6. Keep track of any links or websites mentioned in the podcast. These will be used as links on the website. If you can't find the link, provide only the name of the website.
+          7. tally the time each speaker speaks by using the provided timestamps. Do not guess.
+          8. Provide a list of guest names. If the transcript doesn't include their real name, try to infer it.
+
+          If you, the AI, have feedback or clarifications on your response, please put them in the notes section.
+
+          Return each of these things in JSON format that looks like this:
+
+          {
+            "title": "...",
+            "description": "...",
+            "notes": "...",
+            "summary": [{"time": "02:33", "text": "...", "description": "..."}],
+            "tweets": ["..."],
+            "listener_tweets": ["..."],
+            "topics": ["...", "..."],
+            "links": [{ "name": "Name of link", "url": "https://example.com"}, "..."],
+            "speaker_times": [{"name": "Wes Bos", "time": "02:33"}, "..."],
+            "guests": ["..."]
+          }`;
+        </script>
+      </article>
+
+      <article>
+        <script type="text/display">
+          const input: CreateChatCompletionRequest = {
+            model: MODEL,
+            "messages": [
+              { "role": "system", "content": "You summarize web development podcasts" },
+              { "role": "user", "content": "Syntax is a podcast about web development. Available at https://Syntax.fm" },
+              { "role": "user", "content": `This episode is #${show.number} entitled ${show.name}` },
+              { "role": "user", "content": summarizePrompt },
+              { "role": "user", "content": transcript },
+            ]
+          };
+        </script>
+      </article>
+
+      <article>
+        <script type="text/display" lang="json">
+          {
+            "title": "Can Vanilla CSS Replace Sass Yet? A Deep Dive",
+
+            "description": "Scott Tolinski and Wes Bos explore the topic of using Vanilla CSS in place of Sass. They discuss the pros and cons of each feature, and consider the possibilities of switching over to Vanilla CSS.",
+
+            "topics": [
+              "Vanilla CSS",
+              "Sass",
+              "Web Development"
+            ]
+          }
+        </script>
+      </article>
+      <article>
+        <script type="text/display" lang="json">
+          "summary": [
+            { "time": "00:11", "text": "Introduction and personal updates", },
+            { "time": "04:20", "text": "Variables and their browser support", },
+            { "time": "07:46", "text": "Post CSS discussion", },
+            { "time": "09:53", "text": "CSS nesting and comparison with Sass", },
+            { "time": "17:01", "text": "Nesting syntax update", },
+            { "time": "19:49", "text": "Using nesting in practice (via. Adam Argyle's blog)", },
+            { "time": "21:54", "text": "Native CSS nesting in Sass?", },
+            { "time": "24:43", "text": "Colors and variables", },
+            { "time": "30:17", "text": "Looping in CSS", },
+            { "time": "34:40", "text": "Mixins or extends", },
+            { "time": "38:26", "text": "Rating for each feature", },
+            { "time": "41:18", "text": "Partial importing in CSS", },
+            { "time": "44:30", "text": "Math in CSS", },
+            { "time": "47:22", "text": "Functions in Sass", },
+            { "time": "52:56", "text": "BEM syntax in Sass", },
+            { "time": "55:23", "text": "Using JavaScript and CSS", },
+            { "time": "58:01", "text": "Conclusion: Should you drop Sass?", }
+          ],
+        </script>
+      </article>
+      <article>
+        <script type="text/display" lang="json">
+                    {
+                    "tweets": [
+                      "Incredible episode on whether Vanilla CSS can take the place of Sass! You don't want to miss this one!",
+                      "Learn something new about Vanilla CSS vs. Sass in the latest Syntax podcast episode!",
+                      "Ready to dive into the debate between Vanilla CSS and Sass? Syntax has you covered!",
+                      "Can Vanilla CSS really replace Sass yet? Find out in this enticing new podcast episode!",
+                      "Sass, meet your match! Unravel pros and cons of its features vs. Vanilla CSS on the latest Syntax episode!",
+                      "Get ready for a mythbusters-style exploration into Vanilla CSS and Sass in the latest episode of Syntax!"
+                    ],
+                    "listener_tweets": [
+                      "@syntaxfm This episode on Vanilla CSS vs. Sass was super informative! Thank you!",
+                      "Thoroughly enjoyed the discussion in the latest @syntaxfm podcast about whether Vanilla CSS can replace Sass!",
+                      "Listening to @syntaxfm, I discovered some new techniques on CSS and Sass! Awesome stuff!",
+                      "That Vanilla CSS & Sass debate on @syntaxfm podcast made me reconsider my approach to web dev!",
+                      "Learned a lot from the @syntaxfm podcast where Scott and Wes dive into the world of Vanilla CSS vs. Sass. Must-listen!",
+          "If you're considering switching from Sass to vanilla CSS, check out this episode of @syntaxfm! It helped me a lot."
+                    ],
+                    }
+        </script>
+      </article>
+      <article>
+        <h2>Embeddings</h2>
+        <script type="text/display"></script>
+      </article>
+
+      <article>
+        <img src="/ai-and-coding-talk/assets/syntax-chat.0d28c943.png" class="fit" />
+      </article>
+
+      <article>
+        <h2>How does it know about 600+ hours of transcripts?</h2>
+        <p class="sub">It doesnt.</p>
+      </article>
+
+      <article>
+        <script type="text/display">
+          async function convertToEmbedding(input: string) {
+            const response = await openai.createEmbedding({
+              input,
+              model: 'text-embedding-ada-002'
+            });
+            return {
+              // Store the original text
+              input,
+              // and the embedding
+              embedding: response.data.data.at(0)?.embedding,
+            }
+          }
+        </script>
+        <p>
+          0.6¢ ($0.006) Per 1 hour episode, $2.88 for the entire syntax back
+          catalog of 620 eps
+        </p>
+      </article>
+
+      <article>
+        <img src="/ai-and-coding-talk/assets/embeddings1.9a0bc630.png" class="fit" />
+      </article>
+      <article>
+        <img src="/ai-and-coding-talk/assets/embeddings2.0d5b2e64.png" class="fit" />
+      </article>
+      <article>
+        <img src="/ai-and-coding-talk/assets/embeddings3.349f38ea.png" class="fit" />
+      </article>
+
+      <article></article>
 
       <article class="browsers">
         <style>
@@ -65,84 +1011,84 @@
           }
         </style>
         <p>
-          V8 → <img src="/next-gen-server-js/assets/chrome.c24bb399.svg" /><img
-            src="/next-gen-server-js/assets/edge.8f192af5.png"
-          /><img src="/next-gen-server-js/assets/chromium.6b58ab47.png" />
+          V8 → <img src="/ai-and-coding-talk/assets/chrome.c24bb399.svg" /><img
+            src="/ai-and-coding-talk/assets/edge.8f192af5.png"
+          /><img src="/ai-and-coding-talk/assets/chromium.6b58ab47.png" />
         </p>
-        <p>Spider Monkey → <img src="/next-gen-server-js/assets/firefox.a215097d.png" /></p>
-        <p>JavaScriptCore → <img src="/next-gen-server-js/assets/safari.9d723a4b.png" /></p>
+        <p>Spider Monkey → <img src="/ai-and-coding-talk/assets/firefox.a215097d.png" /></p>
+        <p>JavaScriptCore → <img src="/ai-and-coding-talk/assets/safari.9d723a4b.png" /></p>
       </article>
 
       <article>
         <div class="columns">
           <div>
-            <img src="/next-gen-server-js/assets/node.c716a3d9.png" />
+            <img src="/ai-and-coding-talk/assets/node.c716a3d9.png" />
             <h3>Node.js</h3>
           </div>
           <h3>→</h3>
-          <img src="/next-gen-server-js/assets/v8.6966a77a.png" alt="" />
+          <img src="/ai-and-coding-talk/assets/v8.6966a77a.png" alt="" />
         </div>
       </article>
 
       <article>
         <div class="columns">
           <div>
-            <img src="/next-gen-server-js/assets/deno.ce7e91d4.svg" />
+            <img src="/ai-and-coding-talk/assets/deno.ce7e91d4.svg" />
             <h3>Deno</h3>
             <p class="small">[Deno Deploy, Netlify Edge, Supabase Edge]</p>
           </div>
           <h3>→</h3>
-          <img src="/next-gen-server-js/assets/v8.6966a77a.png" alt="" />
+          <img src="/ai-and-coding-talk/assets/v8.6966a77a.png" alt="" />
         </div>
       </article>
 
       <article>
         <div class="columns">
           <div>
-            <img src="/next-gen-server-js/assets/cloudflare.8c06e3a1.jpg" />
+            <img src="/ai-and-coding-talk/assets/cloudflare.8c06e3a1.jpg" />
             <h3>Cloudflare<br />Workers</h3>
             <p class="small">[Vercel Edge]</p>
           </div>
           <h3>→</h3>
-          <img src="/next-gen-server-js/assets/v8.6966a77a.png" alt="" />
+          <img src="/ai-and-coding-talk/assets/v8.6966a77a.png" alt="" />
         </div>
       </article>
       <article>
         <div class="columns">
           <div>
-            <img src="/next-gen-server-js/assets/bun.6395a2d7.svg" />
+            <img src="/ai-and-coding-talk/assets/bun.6395a2d7.svg" />
             <h3>Bun</h3>
           </div>
           <h3>→</h3>
-          <img src="/next-gen-server-js/assets/jsc.987c0559.jpg" alt="" />
+          <img src="/ai-and-coding-talk/assets/jsc.987c0559.jpg" alt="" />
         </div>
       </article>
 
       <article>
         <div class="columns">
           <div>
-            <img src="/next-gen-server-js/assets/fastly.2af8f59f.png" />
+            <img src="/ai-and-coding-talk/assets/fastly.2af8f59f.png" />
             <h4>Fastly<br />Compute<br />@edge</h4>
           </div>
           <h3>→</h3>
-          <img src="/next-gen-server-js/assets/spidermonkey.8303ed62.png" alt="" />
+          <img src="/ai-and-coding-talk/assets/spidermonkey.8303ed62.png" alt="" />
         </div>
       </article>
       <article>
         <div class="columns">
           <div>
-            <img src="/next-gen-server-js/assets/alibaba.99a834f3.png" />
+            <img src="/ai-and-coding-talk/assets/alibaba.99a834f3.png" />
             <h4>Alibaba<br />Edge<br />Compute</h4>
           </div>
           <h3>→</h3>
-          <img src="/next-gen-server-js/assets/v8.6966a77a.png" alt="" />
+          <img src="/ai-and-coding-talk/assets/v8.6966a77a.png" alt="" />
         </div>
       </article>
 
       <article>
         <div class="coloumns">
-          <img src="/next-gen-server-js/assets/bloomberg.4ffcc6f7.png" />
-          <img src="/next-gen-server-js/assets/bytedance.039c017e.png" />
+          <img src="/ai-and-coding-talk/assets/bloomberg.4ffcc6f7.png" />
+          <img src="/ai-and-coding-talk/assets/bytedance.039c017e.png" />
         </div>
       </article>
 
@@ -153,26 +1099,26 @@
       <article>
         <h2>3 Browser JS Runtimes</h2>
         <div class="grid">
-          <img src="/next-gen-server-js/assets/chrome.c24bb399.svg" />
-          <img src="/next-gen-server-js/assets/firefox.a215097d.png" />
-          <img src="/next-gen-server-js/assets/safari.9d723a4b.png" />
+          <img src="/ai-and-coding-talk/assets/chrome.c24bb399.svg" />
+          <img src="/ai-and-coding-talk/assets/firefox.a215097d.png" />
+          <img src="/ai-and-coding-talk/assets/safari.9d723a4b.png" />
         </div>
       </article>
 
       <article>
         <h2>6+ Server JS Runtimes</h2>
         <div class="grid">
-          <img src="/next-gen-server-js/assets/node.c716a3d9.png" />
-          <img src="/next-gen-server-js/assets/deno.ce7e91d4.svg" />
-          <img src="/next-gen-server-js/assets/cloudflare.8c06e3a1.jpg" />
-          <img src="/next-gen-server-js/assets/bun.6395a2d7.svg" />
-          <img src="/next-gen-server-js/assets/fastly.2af8f59f.png" />
-          <img src="/next-gen-server-js/assets/alibaba.99a834f3.png" />
+          <img src="/ai-and-coding-talk/assets/node.c716a3d9.png" />
+          <img src="/ai-and-coding-talk/assets/deno.ce7e91d4.svg" />
+          <img src="/ai-and-coding-talk/assets/cloudflare.8c06e3a1.jpg" />
+          <img src="/ai-and-coding-talk/assets/bun.6395a2d7.svg" />
+          <img src="/ai-and-coding-talk/assets/fastly.2af8f59f.png" />
+          <img src="/ai-and-coding-talk/assets/alibaba.99a834f3.png" />
         </div>
       </article>
 
       <article>
-        <img src="/next-gen-server-js/assets/ie6.3feacc2f.jpg" alt="" />
+        <img src="/ai-and-coding-talk/assets/ie6.3feacc2f.jpg" alt="" />
       </article>
 
       <article>
@@ -203,7 +1149,7 @@
 
       <article>
         <h2>Stronger</h2>
-        <img src="/next-gen-server-js/assets/security.3582845a.jpg" class="wide" />
+        <img src="/ai-and-coding-talk/assets/security.3582845a.jpg" class="wide" />
       </article>
 
       <article>
@@ -249,7 +1195,7 @@
       </article>
 
       <article>
-        <img src="/next-gen-server-js/assets/js.48d02175.png" alt="" />
+        <img src="/ai-and-coding-talk/assets/js.48d02175.png" alt="" />
       </article>
 
       <article>
@@ -258,7 +1204,7 @@
           <div>
             <img
               style="height: 200px; object-fit: contain; width: auto"
-              src="/next-gen-server-js/assets/tc39.de2fa905.svg"
+              src="/ai-and-coding-talk/assets/tc39.de2fa905.svg"
               alt=""
             />
             <p>TC39</p>
@@ -267,7 +1213,7 @@
           <div>
             <img
               style="height: 200px; object-fit: contain; width: auto"
-              src="/next-gen-server-js/assets/w3c.2c649c57.png"
+              src="/ai-and-coding-talk/assets/w3c.2c649c57.png"
               alt=""
             />
             <p>W3C</p>
@@ -276,7 +1222,7 @@
           <div>
             <img
               style="height: 200px; object-fit: contain; width: auto"
-              src="/next-gen-server-js/assets/whatwg.02c8530d.png"
+              src="/ai-and-coding-talk/assets/whatwg.02c8530d.png"
               alt=""
             />
             <p>WHATWG</p>
@@ -286,15 +1232,15 @@
       </article>
 
       <article>
-        <img class="fit" src="/next-gen-server-js/assets/node-fetch.891221d5.png" alt="" />
+        <img class="fit" src="/ai-and-coding-talk/assets/node-fetch.891221d5.png" alt="" />
       </article>
 
       <article>
-        <img class="fit" src="/next-gen-server-js/assets/fetch-standard.ac2b2be7.png" alt="" />
+        <img class="fit" src="/ai-and-coding-talk/assets/fetch-standard.ac2b2be7.png" alt="" />
       </article>
 
       <article>
-        <img src="/next-gen-server-js/assets/wintergc.68ce46e7.png" alt="" />
+        <img src="/ai-and-coding-talk/assets/wintergc.68ce46e7.png" alt="" />
       </article>
 
       <article>
@@ -311,14 +1257,14 @@
 
       <article>
         <h2>In the Browser, We send Requests</h2>
-        <img src="/next-gen-server-js/assets/request.4965cadf.png" alt="" />
+        <img src="/ai-and-coding-talk/assets/request.4965cadf.png" alt="" />
       </article>
       <article>
         <h2>On the Server, we handle them!</h2>
-        <img src="/next-gen-server-js/assets/req2.560305ef.png" alt="" />
+        <img src="/ai-and-coding-talk/assets/req2.560305ef.png" alt="" />
       </article>
       <article>
-        <img class="fit" src="/next-gen-server-js/assets/requests.a26b3df4.png" alt="" />
+        <img class="fit" src="/ai-and-coding-talk/assets/requests.a26b3df4.png" alt="" />
       </article>
 
       <article>
@@ -333,18 +1279,18 @@
       </article>
 
       <article>
-        <img class="fit" src="/next-gen-server-js/assets/streams.b97c6fc4.png" alt="" />
+        <img class="fit" src="/ai-and-coding-talk/assets/streams.b97c6fc4.png" alt="" />
       </article>
       <article>
-        <img class="fit" src="/next-gen-server-js/assets/abort.4accac27.png" alt="" />
-      </article>
-
-      <article>
-        <img class="fit" src="/next-gen-server-js/assets/abort-server.e87a3f36.png" alt="" />
+        <img class="fit" src="/ai-and-coding-talk/assets/abort.4accac27.png" alt="" />
       </article>
 
       <article>
-        <img src="/next-gen-server-js/assets/react-streams.6625a33a.png" alt="" />
+        <img class="fit" src="/ai-and-coding-talk/assets/abort-server.e87a3f36.png" alt="" />
+      </article>
+
+      <article>
+        <img src="/ai-and-coding-talk/assets/react-streams.6625a33a.png" alt="" />
       </article>
 
       <article>
@@ -353,11 +1299,11 @@
       </article>
 
       <article>
-        <img src="/next-gen-server-js/assets/event1.f8d1fe83.png" alt="" />
+        <img src="/ai-and-coding-talk/assets/event1.f8d1fe83.png" alt="" />
       </article>
 
       <article>
-        <img src="/next-gen-server-js/assets/event2.40f221cc.png" alt="" />
+        <img src="/ai-and-coding-talk/assets/event2.40f221cc.png" alt="" />
         <!-- Node, DEno, vbun -->
         <!-- Cloudflare fetch, scheduled and queue -->
       </article>
@@ -367,7 +1313,7 @@
       </article>
 
       <article>
-        <img src="/next-gen-server-js/assets/formData.536bad41.png" alt="" />
+        <img src="/ai-and-coding-talk/assets/formData.536bad41.png" alt="" />
       </article>
 
       <article>
@@ -385,7 +1331,7 @@
       </article>
 
       <article>
-        <img src="/next-gen-server-js/assets/stream-replace.16eb6d37.png" alt="" />
+        <img src="/ai-and-coding-talk/assets/stream-replace.16eb6d37.png" alt="" />
       </article>
 
       <article>
@@ -401,10 +1347,10 @@
       </article>
 
       <article>
-        <img src="/next-gen-server-js/assets/alert.b6124ec8.png" alt="" />
+        <img src="/ai-and-coding-talk/assets/alert.b6124ec8.png" alt="" />
       </article>
       <article>
-        <img src="/next-gen-server-js/assets/alert-output.59dde5ca.png" alt="" />
+        <img src="/ai-and-coding-talk/assets/alert-output.59dde5ca.png" alt="" />
       </article>
 
       <!-- <article>
@@ -417,15 +1363,15 @@
       </article>
 
       <article>
-        <img src="/next-gen-server-js/assets/als.a592218e.png" alt="" />
+        <img src="/ai-and-coding-talk/assets/als.a592218e.png" alt="" />
       </article>
 
       <article>
-        <img src="/next-gen-server-js/assets/ryan-async.92f7dcb7.png" alt="" />
+        <img src="/ai-and-coding-talk/assets/ryan-async.92f7dcb7.png" alt="" />
       </article>
 
       <article>
-        <img src="/next-gen-server-js/assets/async-context.2360f480.png" alt="" />
+        <img src="/ai-and-coding-talk/assets/async-context.2360f480.png" alt="" />
       </article>
 
       <article>
@@ -448,11 +1394,11 @@
       </article>
 
       <article>
-        <img src="/next-gen-server-js/assets/rewriter.728ccbb8.png" alt="" />
+        <img src="/ai-and-coding-talk/assets/rewriter.728ccbb8.png" alt="" />
       </article>
 
       <article>
-        <img src="/next-gen-server-js/assets/worker-tools.d43d8ebc.png" alt="" />
+        <img src="/ai-and-coding-talk/assets/worker-tools.d43d8ebc.png" alt="" />
         <!-- <a href="https://github.com/worker-tools" target="_blank"
           >worker-tools</a
         > -->

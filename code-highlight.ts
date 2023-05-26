@@ -47,12 +47,16 @@ async function turnScriptIntoCodeBlock(script: HTMLScriptElement) {
   type(pre);
 }
 
-const { lines, colors } = await highlight(`const`, "ts", cobalt2);
+async function populateColors() {
+  const { lines, colors } = await highlight(`const`, "ts", cobalt2);
 
-// convert colors to CSS variables if they arent on the body already
-if (document.documentElement.style.getPropertyValue('--background') === '') {
-  document.documentElement.style.cssText = objectToCSSVaribles(colors);
+  // convert colors to CSS variables if they arent on the body already
+  if (document.documentElement.style.getPropertyValue('--background') === '') {
+    document.documentElement.style.cssText = objectToCSSVaribles(colors);
+  }
 }
+populateColors();
+
 
 
 function renderLines(lines: Token[][]) {
@@ -111,8 +115,11 @@ function makeScroller() {
 const typingState: Map<HTMLPreElement, boolean> = new Map();
 
 async function type(pre: HTMLPreElement) {
-  // If this pre is already being typed, return
+  // If this <pre> is already being animated, return
   if (typingState.get(pre)) return;
+  // Otherwise, set it to being animated
+  typingState.set(pre, true);
+
   // Select all the spans and hide them
   const allTokens = pre?.querySelectorAll('span.token');
   if (!allTokens) {
