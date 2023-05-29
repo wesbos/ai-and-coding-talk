@@ -6,6 +6,10 @@
     <script type="module" src="./slides.js"></script>
     <link href="./styles.css" rel="stylesheet" type="text/css" />
     <link rel="icon" href="https://fav.farm/👨‍💻" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0..1,0..1,0..1&display=swap"
+      rel="stylesheet"
+    />
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.151.3/three.min.js"></script> -->
     <script src="./p5.min.js"></script>
     <script type="module" src="./go.ts"></script>
@@ -26,7 +30,7 @@
         <p class="sub">@wesbos</p>
       </article>
       <article class="first">
-        <div class="columns">
+        <div class="side-by-side">
           <div>
             <h2>Web<br />Dev<br />Courses</h2>
           </div>
@@ -41,16 +45,19 @@
       </article>
 
       <article>
-        <h1>This is a talk about Coding with and for AI</h1>
+        <h2>
+          This is a talk about Coding <mark>with</mark> and <mark>for</mark> AI
+        </h2>
       </article>
 
       <article>
-        <h2>Lets clear a few things up</h2>
+        <h2>A few things</h2>
         <ul class="build">
           <li>I have nothing to sell</li>
           <li>I'm not some huckster</li>
+          <li>Not trying to be inspirational</li>
           <li>Just a enthusiastic user!</li>
-          <li>Skeptical? Good, me too. Don't tell me about it, show me!</li>
+          <li>Skeptical? Good, me too. Let me show you the cool stuff.</li>
         </ul>
       </article>
 
@@ -58,15 +65,17 @@
         <img src="./ss/meh.png" alt="" class="fit" />
       </article>
       <article>
-        <h1>
-          AI gives developers a massive boost in productivity and code quality.
-        </h1>
+        <h3>
+          AI gives developers a massive boost in <mark>productivity</mark>,
+          <mark>code quality</mark> and what they are
+          <mark>able to build</mark>.
+        </h3>
       </article>
       <article>
-        <h1>
+        <h3>
           We're still figuring a lot of things out - but I don't think it's
           going anywhere and it's not something to ignore.
-        </h1>
+        </h3>
       </article>
 
       <article>
@@ -75,29 +84,63 @@
 
       <article>
         <h3>Ghost Code</h3>
+        <img src="./ss/ghost.png" alt="" class="wide" />
+        <div class="logos">
+          <div>
+            <img src="./ss/logos/github-copilot-logo.jpg" alt="" />
+          </div>
+          <div>
+            <img src="./ss/logos/code whisperer.png" alt="" />
+            <span class="label">Amazon Code Whisperer</span>
+          </div>
 
-        <div class="grid">
-          copilot, amazon code whisperer, replit ghostwriter, tabnine, codegeex,
+          <div>
+            <img src="./ss/logos/codegeeks.png" alt="" />
+            <span class="label">Codegeex</span>
+          </div>
+
+          <div>
+            <img src="./ss/logos/ghostwriter.png" alt="" />
+            <span class="label">Replit Ghostwriter</span>
+          </div>
+
+          <div>
+            <img src="./ss/logos/tab9.png" alt="" />
+          </div>
         </div>
       </article>
       <article>
-        <h3>CLI</h3>
-        <img src="https://fig.io/images/support/banner/fig-ai.gif" alt="" />
-        <div class="grid">Copilot CLI, WARP, Fig</div>
+        <h4>CLI</h4>
+        <img
+          style="width: 1200px; object-fit: contain"
+          src="https://fig.io/images/support/banner/fig-ai.gif"
+          alt=""
+        />
+        <div class="logos">
+          <div>
+            <img src="./ss/logos/warp.png" alt="" />
+          </div>
+          <div>
+            <img src="./ss/logos/fig.png" alt="" />
+          </div>
+          <div>
+            <img src="./ss/logos/github-copilot-logo.jpg" alt="" />
+          </div>
+        </div>
       </article>
 
       <article>
-        <h3>Chat</h3>
-        <p>Copilot Chat, Warp, RAycast, ChatGPT...</p>
+        <img class="fit" src="./ss/center.png" alt="" />
+        <h4 class="stamp right">Chat Apps</h4>
       </article>
       <article>
-        <h3>Pull Requests</h3>
-        <video src="./videos/prs.mp4" muted autoplay loop></video>
+        <h4 class="stamp bottom left">Pull Requests</h4>
+        <video class="fit" src="./videos/prs.mp4" muted autoplay loop></video>
       </article>
 
       <article>
         <h3>So many Experiments</h3>
-        <p>Voice, Brushes, 100% prompt driven</p>
+        <p>Voice, Brushes, prompts as a DSL</p>
       </article>
 
       <article>
@@ -110,7 +153,8 @@
       </article>
 
       <article>
-        <h2>Examples</h2>
+        <h2>Using AI to Code</h2>
+        <p>How you can use AI in your day-to-day</p>
       </article>
 
       <article>
@@ -120,10 +164,11 @@
       <article>
         <div class="columns">
           <p class="prompt">
-            give me an array of people, each person has a first, last, and age
-            property. <br />Each person also has a nested array of 1-3 jobs,
-            which have start date, optional end date, description and a manager,
-            who has the same properties as a person.
+            > Give me an array of people, each person has a first, last, and age
+            property. <br /><br />Each person also has a nested array of 1-3
+            jobs, which have start date, optional end date, description and a
+            manager, who has the same properties as a person.<br /><br />Generate
+            Types
           </p>
 
           <script type="text/display">
@@ -196,8 +241,8 @@
       <article>
         <div class="sandwich">
           <div>
-            <script type="text/display">
-              // Add types
+            <script type="text/display" data-animate="false">
+              // Add types to this code:
               async function addItemToOrder(orderId, item, quantity) {
                 console.log(`Adding ${quantity} ${item.name} (${item.sku}) to order ${orderId}`)
                 const await order = getOrderDetails(orderId);
@@ -207,46 +252,53 @@
               }
             </script>
           </div>
-          <script type="text/display">
-            type Item = { name: string; sku: string; };
-            type OrderItem = { item: Item; quantity: number; };
-            type Order = { id: string; items: OrderItem[]; };
+          <div class="highlightTypes">
+            <script type="text/display">
+              // ✨✨✨
+              type Item = { name: string; sku: string; };
+              type OrderItem = { item: Item; quantity: number; };
+              type Order = { id: string; items: OrderItem[]; };
 
-            async function addItemToOrder(orderId: string, item: Item, quantity: number): Promise<Order> {
-              console.log(`Adding ${quantity} ${item.name} (${item.sku}) to order ${orderId}`)
-              const order: Order = await getOrderDetails(orderId);
-              order.items.push({ item, quantity });
-              await saveOrder(order);
-              return order;
-            }
-          </script>
+              async function addItemToOrder(orderId: string, item: Item, quantity: number): Promise<Order> {
+                console.log(`Adding ${quantity} ${item.name} (${item.sku}) to order ${orderId}`)
+                const order: Order = await getOrderDetails(orderId);
+                order.items.push({ item, quantity });
+                await saveOrder(order);
+                return order;
+              }
+            </script>
+          </div>
         </div>
       </article>
 
       <article>
         <div class="sanwich">
           <div>
-            <h3>Do the work</h3>
-            <script type="text/display">
-              const video = document.querySelector('video');
-              const canvas = document.querySelector('canvas');
-              const ctx = canvas.getContext('2d');
-              // Write a function to paint the video frame to canvas as frequently as possible. Give me the entire output.
-            </script>
-          </div>
-          <div>
-            <script type="text/display">
-              const video: HTMLVideoElement = document.querySelector('video');
-              const canvas: HTMLCanvasElement = document.querySelector('canvas');
-              const ctx: CanvasRenderingContext2D = canvas.getContext('2d');
+            <p>Do the work</p>
+            <div class="sandwich">
+              <script type="text/display" data-animate="false">
+                const video = document.querySelector('video');
+                const canvas = document.querySelector('canvas');
+                const ctx = canvas.getContext('2d');
+                `Write a function to paint the video frame to canvas as frequently as possible.
+                Give me the entire output.`
+              </script>
+            </div>
+            <div>
+              <script type="text/display">
+                // ✨✨✨
+                const video: HTMLVideoElement = document.querySelector('video');
+                const canvas: HTMLCanvasElement = document.querySelector('canvas');
+                const ctx: CanvasRenderingContext2D = canvas.getContext('2d');
 
-              function paintVideoFrame(): void {
-                ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-                requestAnimationFrame(paintVideoFrame);
-              }
+                function paintVideoFrame(): void {
+                  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                  requestAnimationFrame(paintVideoFrame);
+                }
 
-              paintVideoFrame();
-            </script>
+                paintVideoFrame();
+              </script>
+            </div>
           </div>
         </div>
       </article>
@@ -297,10 +349,10 @@
           <div>
             <p class="prompt">
               I have this HTML.Write the selectors with nth-child so that each
-              of the 10 items have random rotate values between - 2 and 2. Use 2
+              of the 10 items have random rotate values between -2 and 2. Use 2
               decimal points and turns.
             </p>
-            <script lang="html" type="text/display">
+            <script lang="html" type="text/display" data-animate="false">
               <div class="cards">
                 <div class="card"></div>
                 // 10 + items
@@ -354,43 +406,6 @@
       </article>
 
       <article>
-        <h2>Using AI to Code</h2>
-        <h2 class="ghost">Coding for AI</h2>
-      </article>
-
-      <article>
-        <h2>Using AI to Code</h2>
-        <h2 class="ghost">Coding for AI</h2>
-      </article>
-
-      <article>
-        <script type="text/display">
-          const body = document.querySelector("body");
-          const color1 = getComputedStyle(document.documentElement).getPropertyValue(
-            "--fogColor1"
-          );
-          const color3 = getComputedStyle(document.documentElement).getPropertyValue(
-            "--fogColor3"
-          );
-          const color5 = getComputedStyle(document.documentElement).getPropertyValue(
-            "--fogColor5"
-          );
-
-          const computedStyle = getComputedStyle(document.documentElement);
-          const cssVariables = Object.fromEntries(
-            Object.values(computedStyle)
-              .filter((key) => key.startsWith(`--`))
-              .map((key) => {
-                return [key.replace(`--`, ''), computedStyle.getPropertyValue(key)];
-              })
-          );
-
-          function hexToNumber(hex = '#ffc600') {
-            return `0x${parseInt(hex.replace("#", ""), 16).toString(16)}`;
-          }
-        </script>
-      </article>
-      <article>
         <img src="./ss/regex.png" alt="" class="fit" />
       </article>
       <article>
@@ -398,45 +413,49 @@
       </article>
 
       <article>
-        <script type="text/display">
-          const regex = /\b(?:ORD-)?\d{6}(?:\d{2})?\b/g;
+        <div class="columns">
+          <p class="prompt">> Write tests for this regex</p>
 
-          test('matches ORD-123456', () => {
-            const input = 'The order number is ORD-123456.';
-            const matches = input.match(regex);
-            expect(matches).toEqual(['ORD-123456']);
-          });
+          <script type="text/display">
+            const regex = /\b(?:ORD-)?\d{6}(?:\d{2})?\b/g;
 
-          test('matches ORD-12345678', () => {
-            const input = 'The order number is ORD-12345678.';
-            const matches = input.match(regex);
-            expect(matches).toEqual(['ORD-12345678']);
-          });
+            test('matches ORD-123456', () => {
+              const input = 'The order number is ORD-123456.';
+              const matches = input.match(regex);
+              expect(matches).toEqual(['ORD-123456']);
+            });
 
-          test('matches 123456', () => {
-            const input = 'The order number is 123456.';
-            const matches = input.match(regex);
-            expect(matches).toEqual(['123456']);
-          });
+            test('matches ORD-12345678', () => {
+              const input = 'The order number is ORD-12345678.';
+              const matches = input.match(regex);
+              expect(matches).toEqual(['ORD-12345678']);
+            });
 
-          test('matches 12345678', () => {
-            const input = 'The order number is 12345678.';
-            const matches = input.match(regex);
-            expect(matches).toEqual(['12345678']);
-          });
+            test('matches 123456', () => {
+              const input = 'The order number is 123456.';
+              const matches = input.match(regex);
+              expect(matches).toEqual(['123456']);
+            });
 
-          test('matches multiple order numbers', () => {
-            const input = 'The order numbers are ORD-123456 and 12345678.';
-            const matches = input.match(regex);
-            expect(matches).toEqual(['ORD-123456', '12345678']);
-          });
+            test('matches 12345678', () => {
+              const input = 'The order number is 12345678.';
+              const matches = input.match(regex);
+              expect(matches).toEqual(['12345678']);
+            });
 
-          test('does not match invalid order numbers', () => {
-            const input = 'The order number is 12345.';
-            const matches = input.match(regex);
-            expect(matches).toBeNull();
-          });
-        </script>
+            test('matches multiple order numbers', () => {
+              const input = 'The order numbers are ORD-123456 and 12345678.';
+              const matches = input.match(regex);
+              expect(matches).toEqual(['ORD-123456', '12345678']);
+            });
+
+            test('does not match invalid order numbers', () => {
+              const input = 'The order number is 12345.';
+              const matches = input.match(regex);
+              expect(matches).toBeNull();
+            });
+          </script>
+        </div>
       </article>
 
       <article>
@@ -444,13 +463,19 @@
       </article>
 
       <article>
-        <img src="./ss/tdd.png" alt="" class="fit" />
+        <div class="columns">
+          <p class="prompt">> Write the function that satisfies these tests</p>
+          <img src="./ss/tdd.png" alt="" class="fit" />
+        </div>
       </article>
       <article>
         <img src="./ss/take1.png" alt="" class="fit" />
       </article>
       <article>
-        <img src="./ss/take2.png" alt="" class="fit" />
+        <div class="columns">
+          <p class="prompt">> Give Feedback</p>
+          <img src="./ss/take2.png" alt="" class="fit" />
+        </div>
       </article>
       <article>
         <img src="./ss/take3.png" alt="" class="fit" />
@@ -469,7 +494,8 @@
 
       <article>
         <h3>Flow Control</h3>
-        <script type="text/display">
+        <p class="prompt">> Take this callback hell code</p>
+        <script type="text/display" data-animate="false">
           getWeather(function (weather) {
             getPhotosOfCurrentWeather(weather, function (photos) {
               getBlogPosts(function (posts) {
@@ -482,7 +508,7 @@
         </script>
       </article>
       <article>
-        <p class="prompt">convert to using promises</p>
+        <p class="prompt">> convert to using promises</p>
         <script type="text/display">
           getWeather()
             .then((weather) => getPhotosOfCurrentWeather(weather))
@@ -493,7 +519,7 @@
         </script>
       </article>
       <article>
-        <p class="prompt">convert to async + await</p>
+        <p class="prompt">> convert to async + await</p>
         <script type="text/display">
           try {
             const weather = await getWeather();
@@ -506,10 +532,10 @@
           }
         </script>
       </article>
-
+      <!--
       <article>
-        <p class="prompt">
-          can the selected code be improved for any waterfall issues? Run
+        <p class="prompt tac">
+          > can the selected code be improved for any waterfall issues? Run
           concurrently if possible.
         </p>
         <script type="text/display">
@@ -522,14 +548,14 @@
             });
         </script>
       </article>
-
+ -->
       <article>
         <img src="./ss/fall-apart.png" alt="" class="fit" />
       </article>
 
       <article>
-        <p class="prompt">
-          # ffmpeg command for merging three video files, overlaying captions
+        <p class="prompt tac">
+          > ffmpeg command for merging three video files, overlaying captions
           and adding music from tunes.mp3
         </p>
         <script type="text/display" lang="bash">
@@ -538,9 +564,13 @@
       </article>
 
       <article>
-        <img src="./ss/explain2.png" alt="" class="fit" />
+        <div class="columns">
+          <p class="prompt">> Explain it to me</p>
+          <img src="./ss/explain2.png" alt="" class="fit" />
+        </div>
       </article>
       <article>
+        <p class="prompt">> Install these</p>
         <img src="./ss/install-these.png" alt="" class="fit" />
       </article>
 
@@ -549,7 +579,8 @@
       </article>
 
       <article>
-        <h1>Let's look at how to integrate AI into your apps</h1>
+        <h3>✨</h3>
+        <h3>Let's look at how to integrate AI into your apps</h3>
       </article>
 
       <article>
@@ -558,7 +589,9 @@
       <article>
         <div class="columns">
           <div>
+            <p class="prompt tac">> transcribe</p>
             <img src="./ss/syntaxmp3.png" alt="" />
+            <p class="prompt tac">(API)</p>
           </div>
           <div>
             <script type="text/display" lang="json">
@@ -761,22 +794,32 @@
       <article>
         <h3>Prompts</h3>
         <script type="text/display" lang="markdown">
-          Summarize the provided podcast transcript into very succinct bullet points, each containing just a few words:
+          > Summarize the provided podcast transcript into very succinct bullet points, each containing just a few words:
 
-          Wes: Hello and welcome to syntax
+            Wes [00:03]: Hello and welcome to syntax
 
-          Scott: Today we're covering CSS variables and how you can use them!
+            Scott [00:09]: Today we're covering CSS variables and how you can use them!
 
-          Wes: Siiiiiiick!
+            Wes [00:69]: Siiiiiiick!
+
+            // ... 60 more mins
         </script>
       </article>
 
       <article>
-        <img src="./ss/tokens.png" alt="" class="fit" />
+        <div class="columns">
+          <p class="prompt tac">1 Hour Podcast = ~15,000 Tokens</p>
+          <img src="./ss/tokens.png" alt="" class="fit" />
+        </div>
       </article>
 
       <article>
-        1 hour podcast = 15,000 token input, 1,000 token output
+        <p class="prompt">
+          1 hour podcast = 15,000 token input, 1,000 token output.
+        </p>
+        <p>
+          As with everything, it's a tradeoff between quality, speed and price.
+        </p>
 
         <table>
           <thead>
@@ -804,12 +847,12 @@
             </tr>
             <tr>
               <td>Antropic Claude v1</td>
-              <td>100,000</td>
+              <td>100,000 ?</td>
               <td>48 cents</td>
             </tr>
             <tr>
               <td>Antropic Claude v1 Instant</td>
-              <td>100,000</td>
+              <td>100,000 ?</td>
               <td>8 cents</td>
             </tr>
           </tbody>
@@ -839,6 +882,7 @@
       </article>
 
       <article>
+        <p class="prompt">> Craft The Prompt</p>
         <script type="text/display">
           export const summarizePrompt = `Summarize the provided podcast transcript into very succinct bullet points, each containing just a few words. The bullet points should correspond to sections or topics discussed in the podcast with points at least every 3-5 minutes. For each bullet point, you may also provide a longer 1-2 sentence summary of the topic if necessary, which may also include the hosts opinions, thoughts. Do not skip topics.
 
@@ -875,6 +919,7 @@
       </article>
 
       <article>
+        <p class="prompt">> craft the request</p>
         <script type="text/display">
           const input: CreateChatCompletionRequest = {
             model: MODEL,
@@ -890,6 +935,7 @@
       </article>
 
       <article>
+        <p class="prompt">> We get: title, description and topics</p>
         <script type="text/display" lang="json">
           {
             "title": "Can Vanilla CSS Replace Sass Yet? A Deep Dive",
@@ -905,6 +951,7 @@
         </script>
       </article>
       <article>
+        <p class="prompt">> Detailed Summary</p>
         <script type="text/display" lang="json">
           "summary": [
             { "time": "00:11", "text": "Introduction and personal updates", },
@@ -928,6 +975,7 @@
         </script>
       </article>
       <article>
+        <p class="prompt">> Tweets?</p>
         <script type="text/display" lang="json">
                     {
                     "tweets": [
@@ -985,6 +1033,7 @@
       </article>
 
       <article>
+        <p>Cosine Similarity, Euclidean Distance</p>
         <img src="./ss/embeddings1.png" class="fit" />
       </article>
       <article>
@@ -994,442 +1043,86 @@
         <img src="./ss/embeddings3.png" class="fit" />
       </article>
 
-      <article></article>
-
-      <article class="browsers">
-        <style>
-          .browsers img {
-            max-width: 100px;
-            margin: 0 1rem;
-          }
-          .browsers p {
-            display: grid;
-            place-items: center;
-            grid-auto-flow: column;
-          }
-        </style>
-        <p>
-          V8 → <img src="./icons/chrome.svg" /><img
-            src="./icons/edge.png"
-          /><img src="./icons/chromium.png" />
-        </p>
-        <p>Spider Monkey → <img src="./icons/firefox.png" /></p>
-        <p>JavaScriptCore → <img src="./icons/safari.png" /></p>
-      </article>
-
       <article>
-        <div class="columns">
-          <div>
-            <img src="./icons/node.png" />
-            <h3>Node.js</h3>
-          </div>
-          <h3>→</h3>
-          <img src="./icons/v8.png" alt="" />
-        </div>
-      </article>
-
-      <article>
-        <div class="columns">
-          <div>
-            <img src="./icons/deno.svg" />
-            <h3>Deno</h3>
-            <p class="small">[Deno Deploy, Netlify Edge, Supabase Edge]</p>
-          </div>
-          <h3>→</h3>
-          <img src="./icons/v8.png" alt="" />
-        </div>
-      </article>
-
-      <article>
-        <div class="columns">
-          <div>
-            <img src="./icons/cloudflare.jpg" />
-            <h3>Cloudflare<br />Workers</h3>
-            <p class="small">[Vercel Edge]</p>
-          </div>
-          <h3>→</h3>
-          <img src="./icons/v8.png" alt="" />
-        </div>
-      </article>
-      <article>
-        <div class="columns">
-          <div>
-            <img src="./icons/bun.svg" />
-            <h3>Bun</h3>
-          </div>
-          <h3>→</h3>
-          <img src="./icons/jsc.jpg" alt="" />
-        </div>
-      </article>
-
-      <article>
-        <div class="columns">
-          <div>
-            <img src="./icons/fastly.png" />
-            <h4>Fastly<br />Compute<br />@edge</h4>
-          </div>
-          <h3>→</h3>
-          <img src="./icons/spidermonkey.png" alt="" />
-        </div>
-      </article>
-      <article>
-        <div class="columns">
-          <div>
-            <img src="./icons/alibaba.png" />
-            <h4>Alibaba<br />Edge<br />Compute</h4>
-          </div>
-          <h3>→</h3>
-          <img src="./icons/v8.png" alt="" />
-        </div>
-      </article>
-
-      <article>
-        <div class="coloumns">
-          <img src="./icons/bloomberg.png" />
-          <img src="./icons/bytedance.png" />
-        </div>
-      </article>
-
-      <article>
-        <h1>So if my math is correct...</h1>
-      </article>
-
-      <article>
-        <h2>3 Browser JS Runtimes</h2>
-        <div class="grid">
-          <img src="./icons/chrome.svg" />
-          <img src="./icons/firefox.png" />
-          <img src="./icons/safari.png" />
-        </div>
-      </article>
-
-      <article>
-        <h2>6+ Server JS Runtimes</h2>
-        <div class="grid">
-          <img src="./icons/node.png" />
-          <img src="./icons/deno.svg" />
-          <img src="./icons/cloudflare.jpg" />
-          <img src="./icons/bun.svg" />
-          <img src="./icons/fastly.png" />
-          <img src="./icons/alibaba.png" />
-        </div>
-      </article>
-
-      <article>
-        <img src="./icons/ie6.jpg" alt="" />
-      </article>
-
-      <article>
-        <h1>WHY</h1>
-        <p>Why do we have so many runtimes?</p>
-      </article>
-
-      <article>
-        <h2>Better</h2>
+        <h3>Uses</h3>
         <ul class="build">
-          <li>TS out of the Box</li>
-          <li>A push for Standard APIs</li>
-          <li>ESM Spec</li>
-          <li>Easy wins (dotenv, prompt, etc..)</li>
-          <li>A Joy to work with</li>
+          <li>Search</li>
+          <li>Classification / Tagging</li>
+          <li>Grouping Items</li>
+          <li>Anomaly detection</li>
+          <li>Similar Images</li>
+          <li>Related / Recommendations</li>
         </ul>
       </article>
 
       <article>
-        <h2>Faster</h2>
-        <ul class="build">
-          <li>"cold starts"</li>
-          <li>"Rust"</li>
-          <li>"WASM"</li>
-          <li>"Async"</li>
-        </ul>
+        <h2>Back to the Syntax Example</h2>
       </article>
 
       <article>
-        <h2>Stronger</h2>
-        <img src="./icons/security.jpg" class="wide" />
+        <img src="./ss/embeddings-search.png" alt="" class="fit" />
       </article>
 
       <article>
-        <h1>Server Kinds</h1>
+        <script type="text/display">
+          const question = "What does Wes think about Vailla JS?";
+          // Step 1. Convert question to embedding
+          const embedding = await convertToEmbedding(question);
+
+          // Step 2. Search the DB for 5 similar embeddings
+          const similarUtterances = await db.vectorSearch(embedding);
+
+          // Step 3. Expand those utterances to the 2 before and after
+          const utterances = await db.expandUtterances(similarUtterances);
+
+          // Step 4. Convert to sentences like "In episode 302 Wes said: ___"
+          const context = convertUtterancesToSentences(utterances);
+
+          // Step 5. Make a prompt. (Longer IRL)
+          const prompt = `
+            You are a helpful assistant working for Syntax.
+            Your tone is smart but casual.
+            Given the following context: ${context}
+            Answer this question: ${question}`
+
+          // Step 6. Ask the AI Model
+          const response = await ai.chat(prompt);
+        </script>
       </article>
 
       <article>
-        <h3>Traditional VM / Long Running Server</h3>
-        <ul class="build">
-          <li>Always running</li>
-          <li>Maintain Memory</li>
-          <li>Scaling up via Memory/CPU</li>
-          <li>Scaling up via more servers</li>
-          <!-- TODO Examples -->
-        </ul>
-      </article>
-
-      <article>
-        <h2>Serverless Functions</h2>
-        <ul class="build">
-          <li>Only Run in short bursts when needed</li>
-          <li>Scale up by running more</li>
-          <li>Pay for what you need</li>
-        </ul>
-        <!-- TODO Examples -->
-      </article>
-
-      <article>
-        <h2>Edge Functions</h2>
-        <ul class="build">
-          <li>Run closer to your user</li>
-          <li>Can run in-between / intercept requests</li>
-          <li>Limited API</li>
-          <li>Not 100% node compat</li>
-          <li>CPU Time vs Wall Time</li>
-        </ul>
-        <!-- TODO Examples -->
-      </article>
-
-      <article>
-        <h2>What's a poor dev to do? Support 6+ Runtimes?!</h2>
-        <p class="build">well, ya. That's the idea for the future at least!</p>
-      </article>
-
-      <article>
-        <img src="./icons/js.png" alt="" />
-      </article>
-
-      <article>
-        <h2>Web Standards</h2>
-        <div class="grid">
-          <div>
-            <img
-              style="height: 200px; object-fit: contain; width: auto"
-              src="./icons/tc39.svg"
-              alt=""
-            />
-            <p>TC39</p>
-            <p>Async + Await, esm, const, arrow functions</p>
-          </div>
-          <div>
-            <img
-              style="height: 200px; object-fit: contain; width: auto"
-              src="./icons/w3c.png"
-              alt=""
-            />
-            <p>W3C</p>
-            <p>WebRTC, Streams API, Web Components</p>
-          </div>
-          <div>
-            <img
-              style="height: 200px; object-fit: contain; width: auto"
-              src="./icons/whatwg.png"
-              alt=""
-            />
-            <p>WHATWG</p>
-            <p>Fetch, Service Workers, Resize Observer</p>
-          </div>
-        </div>
-      </article>
-
-      <article>
-        <img class="fit" src="./icons/node-fetch.png" alt="" />
-      </article>
-
-      <article>
-        <img class="fit" src="./icons/fetch-standard.png" alt="" />
-      </article>
-
-      <article>
-        <img src="./icons/wintergc.png" alt="" />
-      </article>
-
-      <article>
-        <h2>Browser JS is Server JS</h2>
-        <p>JS is JS</p>
-        <p>We don't need different ways to do the same thing</p>
-        <p>Let's look at some of those standards</p>
-      </article>
-
-      <article>
-        <h1>Fetch</h1>
-        <p>Request + Response are life</p>
-      </article>
-
-      <article>
-        <h2>In the Browser, We send Requests</h2>
-        <img src="./icons/request.png" alt="" />
+        <h1>So, are we screwed?</h1>
+        <p>Out of a job soon?</p>
       </article>
       <article>
-        <h2>On the Server, we handle them!</h2>
-        <img src="./icons/req2.png" alt="" />
+        <h1>I don't know.</h1>
+        <h3>I don't think so</h3>
+        <p>Here is what I think</p>
       </article>
       <article>
-        <img class="fit" src="./icons/requests.png" alt="" />
-      </article>
-
-      <article>
-        <h1>Node</h1>
-        <p>Not Native, But:</p>
-        <p>Hono.js, Fastify Plugin, Next.js Routes, Sveltekit, Astro + more</p>
-      </article>
-
-      <article>
-        <h1>Web Streams</h1>
-        <p>Blow Chunks as you have em</p>
-      </article>
-
-      <article>
-        <img class="fit" src="./icons/streams.png" alt="" />
+        <h2>
+          AI gives us a <mark lass="yellow">massive boost</mark> in what we can
+          do
+        </h2>
       </article>
       <article>
-        <img class="fit" src="./icons/abort.png" alt="" />
-      </article>
-
-      <article>
-        <img class="fit" src="./icons/abort-server.png" alt="" />
-      </article>
-
-      <article>
-        <img src="./icons/react-streams.png" alt="" />
-      </article>
-
-      <article>
-        <h1>Events!</h1>
-        <p>Listen for events on anything!</p>
-      </article>
-
-      <article>
-        <img src="./icons/event1.png" alt="" />
-      </article>
-
-      <article>
-        <img src="./icons/event2.png" alt="" />
-        <!-- Node, DEno, vbun -->
-        <!-- Cloudflare fetch, scheduled and queue -->
-      </article>
-
-      <article>
-        <h1>Form Data</h1>
-      </article>
-
-      <article>
-        <img src="./icons/formData.png" alt="" />
-      </article>
-
-      <article>
-        <h1>Web Workers</h1>
-        <ul class="build">
-          <li>Multi Threaded / Parallel</li>
-          <li>CPU intensive tasks</li>
-          <li>Non-blocking</li>
-        </ul>
-      </article>
-
-      <article>
-        <h1>Service Workers-ish</h1>
-        <p>Intercepting Requests</p>
-      </article>
-
-      <article>
-        <img src="./icons/stream-replace.png" alt="" />
-      </article>
-
-      <article>
-        <ul class="build">
-          <li>Easy Proxy!</li>
-          <li>Add custom CSS to a SASS</li>
-          <li>Migrate Slowly</li>
-        </ul>
-      </article>
-
-      <article>
-        <h1>alert()<br />prompt()<br />confirm()</h1>
-      </article>
-
-      <article>
-        <img src="./icons/alert.png" alt="" />
+        <h1>It's Build More</h1>
+        <p>not</p>
+        <h2>Work Less</h2>
       </article>
       <article>
-        <img src="./icons/alert-output.png" alt="" />
-      </article>
-
-      <!-- <article>
-        <h1>Import Protocols</h1>
-      </article> -->
-
-      <article>
-        <h1>Async<br />Local<br />Storage</h1>
-        <p>Really cool new API</p>
-      </article>
-
-      <article>
-        <img src="./icons/als.png" alt="" />
-      </article>
-
-      <article>
-        <img src="./icons/ryan-async.png" alt="" />
-      </article>
-
-      <article>
-        <img src="./icons/async-context.png" alt="" />
-      </article>
-
-      <article>
-        <h1>Packages</h1>
-        <p>Super Fast</p>
-      </article>
-
-      <article>
-        <h3>import { DOMParser, parseHTML } from 'linkedom/worker';</h3>
-        <p>JSDom Alternative. Works everywhere</p>
-      </article>
-
-      <article>
-        <h1>HTMLRewriter</h1>
-        <ul>
-          <li>Cloudflare Invented</li>
-          <li>Re-implemented everywhere</li>
-          <li>Not a standard</li>
-        </ul>
-      </article>
-
-      <article>
-        <img src="./icons/rewriter.png" alt="" />
-      </article>
-
-      <article>
-        <img src="./icons/worker-tools.png" alt="" />
-        <!-- <a href="https://github.com/worker-tools" target="_blank"
-          >worker-tools</a
-        > -->
+        <h1>Technology isn't going to stand still</h1>
       </article>
       <article>
-        <h1>Filesystem</h1>
-        <p>No standard FS API</p>
-        <p>whatwg/fs maybe?</p>
+        <h3>Less centering divs, more boundary pushing</h3>
       </article>
-
       <article>
-        <h1>So much more!</h1>
+        <h3>We're Problem Solvers</h3>
+        <p>Our tools are changing.</p>
+        <p>Don't ignore it. Stay sharp.</p>
       </article>
-
       <article>
-        <h1>This ins't write once work everywhere</h1>
-        <p>At least not yet...</p>
-      </article>
-
-      <article>
-        <h3>
-          It is a set of standardized APIs that allow us to create
-          interchangeable building blocks.
-        </h3>
-        <p>Servers 🤝 Browsers</p>
-      </article>
-
-      <article>
-        <h3>Build for Standards, target everything</h3>
-      </article>
-
-      <article>
-        <h1>Thanks</h1>
+        <h1 class="nomask">✌️</h1>
         <p>@wesbos</p>
       </article>
     </section>

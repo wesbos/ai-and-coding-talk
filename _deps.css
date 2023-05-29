@@ -30,22 +30,19 @@ body {
 
 .slides {
   /* Just for dev */
-  transform: scale(0.5);
+  /* transform: scale(0.5); */
 }
 
 .slides > article {
   display: block;
   position: absolute;
   overflow: hidden;
-  --w: 1920px;
-  --h: 1080px;
-  width: var(--w);
-  height: var(--h);
-  margin-left: calc((var(--w) / 2) * -1);
-  margin-top: calc((var(--h) / 2) * -1);
+  width: var(--width);
+  height: var(--height);
+  margin-left: calc((var(--width) / 2) * -1);
+  margin-top: calc((var(--height) / 2) * -1);
   left: 50%;
   top: 50%;
-  /* padding: 20px; */
   transition: all 0.3s ease-out;
   justify-content: center;
   align-items: center;
@@ -144,10 +141,13 @@ body {
   display: none;
 }
 .slides > article.current {
-  display: flex;
   transform: translate(0);
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: column;
+  justify-content: space-evenly;
   z-index: 10;
-  gap: 100px;
 }
 .slides > article.next {
   display: flex;

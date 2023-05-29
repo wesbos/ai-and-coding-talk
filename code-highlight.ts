@@ -22,8 +22,9 @@ const observer = new IntersectionObserver((entries) => {
 async function turnScriptIntoCodeBlock(script: HTMLScriptElement) {
   const pre = document.createElement('pre');
   const code = script.innerHTML;
-
   const lines = code.split('\n');
+  // Transfer over data attributes
+  pre.dataset.animate = script.dataset.animate;
   // Remove the last line if it is empty
   if (lines[lines.length - 1] === '') {
     lines.pop();
@@ -32,13 +33,19 @@ async function turnScriptIntoCodeBlock(script: HTMLScriptElement) {
   if (lines[0] === '') {
     lines.shift();
   }
+  if(!lines.length) {
+    console.log(`No lines in ${script.getAttribute('src')}`);
+    return;
+  }
   // Get the indent of the first line
   const indent = lines.at(0).match(/^\s*/)[0];
   // console.log(`Need to remove ${indent} from all lines`);
   const regex = new RegExp(`^ {0,${indent.length}}`, 'g');
   const cleanCode = lines.map(line => line.replace(regex, '')).join('\n');
 
-  const highlighted = await highlight(cleanCode, script.getAttribute('lang') || 'ts', cobalt2);
+  const highlighted = await highlight(cleanCode, script.getAttribute('lang') || 'ts', cobalt2, {
+    scopes: true,
+  });
   pre.innerHTML = renderLines(highlighted.lines);
   pre.classList.add('code-block');
   script.insertAdjacentElement('afterend', pre);
@@ -65,7 +72,7 @@ function renderLines(lines: Token[][]) {
 
 function renderLine(line: Token[]) {
   return line.map((token) => {
-    return `<span class="token" style="${objectToCSS(token.style)}">${token.content}</span>`;
+    return `<span class="token" data-scopes="${token.scopes?.join(' ')}" style="${objectToCSS(token.style || {})}">${token.content}</span>`;
   }).join('');
 }
 
@@ -115,6 +122,7 @@ function makeScroller() {
 const typingState: Map<HTMLPreElement, boolean> = new Map();
 
 async function type(pre: HTMLPreElement) {
+  if(pre.dataset.animate === 'false') return;
   // If this <pre> is already being animated, return
   if (typingState.get(pre)) return;
   // Otherwise, set it to being animated
