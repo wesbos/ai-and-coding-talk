@@ -28,7 +28,7 @@
         <h1>
           <mark>Hi, I&apos;m<br />Wes Bos</mark>
         </h1>
-        <p class="sub">Hamilton, On 🇨🇦. 100% Dutch 🇳🇱</p>
+        <p class="sub">Hamilton, On 🇨🇦. Also 🇳🇱</p>
         <p class="sub">@wesbos</p>
       </article>
       <article class="first">
@@ -47,9 +47,10 @@
       </article>
 
       <article>
-        <h2>
-          This is a talk about Coding <mark>with</mark> and <mark>for</mark> AI
-        </h2>
+        <h3>
+          This is a talk about<br /><mark>coding</mark> with AI &<br />
+          <mark>building things</mark> with AI
+        </h3>
       </article>
 
       <article>
@@ -57,15 +58,14 @@
         <ul class="build">
           <li>I have nothing to sell</li>
           <li>I'm not some huckster</li>
-          <li>Not trying to be inspirational</li>
-          <li>Just a enthusiastic user!</li>
+          <li>Not a Web3 / Crypto guy changing lanes</li>
+          <li>
+            Just a enthusiastic web developer who find this stuff super handy!
+          </li>
           <li>Skeptical? Good, me too. Let me show you the cool stuff.</li>
         </ul>
       </article>
 
-      <article>
-        <img src="/ai-and-coding-talk/assets/meh.0bd01570.png" alt="" class="fit" />
-      </article>
       <article>
         <h3>
           AI gives developers a massive boost in <mark>productivity</mark>,
@@ -82,6 +82,7 @@
 
       <article>
         <h1>Mediums</h1>
+        <p>Places we can use AI to help us code</p>
       </article>
 
       <article>
@@ -141,8 +142,16 @@
       </article>
 
       <article>
-        <h3>So many Experiments</h3>
-        <p>Voice, Brushes, prompts as a DSL</p>
+        <h3>So many Experiments...</h3>
+        <ul class="build">
+          <li><strong>Voice</strong> - a 3rd input?</li>
+          <li>
+            <strong>Brushes</strong> - "Make accessible", "Document", "Add
+            Types", etc..
+          </li>
+          <li>Prompts as a new Syntax / DSL</li>
+          <li>Boilerplate generation</li>
+        </ul>
       </article>
 
       <article>
@@ -244,7 +253,7 @@
         <div class="sandwich">
           <div>
             <script type="text/display" data-animate="false">
-              // Add types to this code:
+              // > Add types to this code:
               async function addItemToOrder(orderId, item, quantity) {
                 console.log(`Adding ${quantity} ${item.name} (${item.sku}) to order ${orderId}`)
                 const await order = getOrderDetails(orderId);
@@ -283,7 +292,7 @@
                 const canvas = document.querySelector('canvas');
                 const ctx = canvas.getContext('2d');
                 `Write a function to paint the video frame to canvas as frequently as possible.
-                Give me the entire output.`
+                Give me the entire output in TypeScript`
               </script>
             </div>
             <div>
@@ -307,10 +316,14 @@
 
       <article>
         <div class="columns">
-          <p class="prompt">
-            convert to a class based re-usable library with all best practices.
-            I want to be able to pass in either selector strings or elements
-          </p>
+          <div>
+            <h4>Make Reusable</h4>
+            <p class="prompt">
+              > convert to a class based re-usable library with all best
+              practices. I want to be able to pass in either selector strings or
+              elements
+            </p>
+          </div>
           <script type="text/display">
             type Selector = string | HTMLElement;
 
@@ -349,8 +362,9 @@
       <article>
         <div class="columns">
           <div>
+            <h4>Generate CSS</h4>
             <p class="prompt">
-              I have this HTML.Write the selectors with nth-child so that each
+              > I have this HTML.Write the selectors with nth-child so that each
               of the 10 items have random rotate values between -2 and 2. Use 2
               decimal points and turns.
             </p>
@@ -466,7 +480,12 @@
 
       <article>
         <div class="columns">
-          <p class="prompt">> Write the function that satisfies these tests</p>
+          <div>
+            <h4>TDD</h4>
+            <p class="prompt">
+              > Write the function that satisfies these tests
+            </p>
+          </div>
           <img src="/ai-and-coding-talk/assets/tdd.9141219f.png" alt="" class="fit" />
         </div>
       </article>
@@ -475,24 +494,25 @@
       </article>
       <article>
         <div class="columns">
-          <p class="prompt">> Give Feedback</p>
+          <p class="prompt">> Give Feedback on Errors</p>
           <img src="/ai-and-coding-talk/assets/take2.aa1b0fcc.png" alt="" class="fit" />
         </div>
       </article>
       <article>
+        <h3>Not Perfect...</h3>
         <img src="/ai-and-coding-talk/assets/take3.710026eb.png" alt="" class="fit" />
       </article>
-      <article>
+      <!-- <article>
         <h1>and then...</h1>
       </article>
       <article>
-        <img src="/ai-and-coding-talk/assets/take4.5dc63fa6.png" alt="" class="fit" />
+        <img src="./ss/take4.png" alt="" class="fit" />
       </article>
       <article class="columns">
         <h3>LOL It's so dumb!</h3>
         <h4>↑ us ↓</h4>
         <h3>It will get better</h3>
-      </article>
+      </article> -->
 
       <article>
         <h3>Flow Control</h3>
@@ -552,10 +572,14 @@
       </article>
  -->
       <article>
-        <img src="/ai-and-coding-talk/assets/fall-apart.99bbc94f.png" alt="" class="fit" />
+        <div class="columns">
+          <h4>Falls Apart with Concurrency</h4>
+          <img src="/ai-and-coding-talk/assets/fall-apart.99bbc94f.png" alt="" class="fit" />
+        </div>
       </article>
 
       <article>
+        <h4>It's really good at complex inputs</h4>
         <p class="prompt tac">
           > ffmpeg command for merging three video files, overlaying captions
           and adding music from tunes.mp3
@@ -777,11 +801,11 @@
 
       <article>
         <h3>What we want</h3>
+        <p>Formatted as JSON please</p>
         <script type="text/display" lang="json">
           {
             "title": "...",
             "description": "...",
-            "notes": "...",
             "summary": [{"time": "02:33", "text": "...", "description": "..."}],
             "tweets": ["..."],
             "listener_tweets": ["..."],
@@ -835,12 +859,12 @@
             <tr>
               <td>GPT 3.5 turbo</td>
               <td>4,096</td>
-              <td>3 cents</td>
+              <td>3¢</td>
             </tr>
             <tr>
               <td>GPT 4 turbo</td>
               <td>8,192</td>
-              <td>51 cents</td>
+              <td>51¢</td>
             </tr>
             <tr>
               <td>GPT 4-32k turbo</td>
@@ -850,12 +874,12 @@
             <tr>
               <td>Antropic Claude v1</td>
               <td>100,000 ?</td>
-              <td>48 cents</td>
+              <td>48¢</td>
             </tr>
             <tr>
               <td>Antropic Claude v1 Instant</td>
               <td>100,000 ?</td>
-              <td>8 cents</td>
+              <td>8¢</td>
             </tr>
           </tbody>
         </table>
@@ -999,6 +1023,49 @@
                     }
         </script>
       </article>
+
+      <article>
+        <p class="prompt">> Speaker Times</p>
+        <script type="text/display">
+          "speaker_times": [
+             {
+               "name": "Wes Bos",
+               "time": "33:22"
+             },
+             {
+               "name": "Scott Tolinski",
+               "time": "26:38"
+             }
+           ],
+        </script>
+      </article>
+      <article>
+        <p class="prompt">> Websites Referenced</p>
+        <script type="text/display">
+          "links": [
+             {
+               "name": "10up",
+               "url": "https://10up.com/"
+             },
+             {
+               "name": "WP Engine",
+               "url": "https://wpengine.com/"
+             },
+             {
+               "name": "Learn WordPress",
+               "url": "https://learn.wordpress.org/"
+             },
+             {
+               "name": "Gutenberg.10up.com",
+               "url": "https://gutenberg.10up.com/"
+             },
+             {
+               "name": "Twitter - Fabian Kägy",
+               "url": "https://twitter.com/FabianKaegy"
+             }
+           ],
+        </script>
+      </article>
       <article>
         <h2>Embeddings</h2>
         <script type="text/display"></script>
@@ -1035,6 +1102,9 @@
       </article>
 
       <article>
+        <img src="/ai-and-coding-talk/assets/tweet.c294f5a4.png" class="fit" />
+      </article>
+      <article>
         <p>Cosine Similarity, Euclidean Distance</p>
         <img src="/ai-and-coding-talk/assets/embeddings1.9a0bc630.png" class="fit" />
       </article>
@@ -1070,7 +1140,6 @@
           const question = "What does Wes think about Vailla JS?";
           // Step 1. Convert question to embedding
           const embedding = await convertToEmbedding(question);
-
           // Step 2. Search the DB for 5 similar embeddings
           const similarUtterances = await db.vectorSearch(embedding);
 
@@ -1093,6 +1162,10 @@
       </article>
 
       <article>
+        <img src="/ai-and-coding-talk/assets/syntax-chat.0d28c943.png" class="fit" />
+      </article>
+
+      <article>
         <h1>So, are we screwed?</h1>
         <p>Out of a job soon?</p>
       </article>
@@ -1108,9 +1181,10 @@
         </h2>
       </article>
       <article>
-        <h1>It's Build More</h1>
+        <h2>What can we now make with our new super powers?</h2>
+        <!-- <h1>It's Build More</h1>
         <p>not</p>
-        <h2>Work Less</h2>
+        <h2>Work Less</h2> -->
       </article>
       <article>
         <h1>Technology isn't going to stand still</h1>
